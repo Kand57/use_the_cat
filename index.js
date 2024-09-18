@@ -4,13 +4,15 @@ const { exec } = require('child_process');
 
 app.use(express.static('public'));
 
-app.get('/cowsay/:animal/:message', (req, res) => {
-  exec(`/usr/games/cowsay -f ${animal} ${req.params.message}`, {timeout: 5000}, (error, stdout) => {
-    if (error) return res.status(500).end();
+app.get('/cowsay/:message/:animal', (req, res) => {
+  const animal = req.params.animal;
+  const message = req.params.message;
+  exec(`/usr/games/cowsay -f ${animal} ${message}`, {timeout: 5000}, (error, stdout) => {
+    if (error) return res.status(500).send("Error with cowsay command.");
     res.type('txt').send(stdout).end();
   });
 });
 
 app.listen(3000, () => {
-  console.log('listening');
+  console.log('Server is listening on port 3000');
 });
