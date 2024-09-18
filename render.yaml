@@ -5,4 +5,5 @@ services:
     buildCommand: |
       apt-get update && apt-get install -y cowsay
       npm install
+      cawsay -f kitty
     startCommand: npm start
