@@ -5,7 +5,6 @@ const { exec } = require('child_process');
 app.use(express.static('public'));
 
 app.get('/cowsay/:message', (req, res) => {
-  const animal = req.params.animal;
   const message = req.params.message;
   exec(`/usr/games/cowsay -f dragon ${message}`, { timeout: 5000 }, (error, stdout) => {
     if (error) return res.status(500).send("Error with cowsay command.");
