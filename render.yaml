@@ -4,6 +4,5 @@ services:
     env: node
     buildCommand: |
       apt-get update && apt-get install -y cowsay
-      mkdir -p /usr/local/share/cows/ && cp custom_animal.cow /usr/local/share/cows/
       npm install
     startCommand: npm start
