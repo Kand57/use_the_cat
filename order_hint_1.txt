@@ -1,0 +1,1 @@
+Combine strings from 4 files and send
