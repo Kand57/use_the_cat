@@ -2,3 +2,5 @@ tensorflow==2.10
 Pillow
 scipy
 matplotlib
+numpy
+pytesseract
