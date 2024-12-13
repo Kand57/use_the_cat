@@ -53,7 +53,8 @@ def main(image_path):
         print("文字は検出されませんでした。txtN_modelで分類します...")
         classification = classify_no_text(image_path)
 
-    print(f"分類結果: {classification}")
+    print(f"Class: {classification}")
+    print(f"Prediction: {predicted_class} (Confidence: {prediction[0][0]:.2f})")
 
 image_path = "/content/drive/MyDrive/SSH_Blackboard_AI/img_unknown/黒板1.jpeg"
 main(image_path)
