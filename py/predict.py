@@ -42,15 +42,15 @@ def classify_with_text(image_path):
 
 def main(image_path):
     if not detect_blackboard(image_path):
-        print("黒板が検出されませんでした。処理を終了します。")
+        print("Not recognized the blackboard.Interrupt program")
         return
 
-    print("黒板が検出されました。文字の有無を判定します...")
+    print("Recognized the blackboard.Run txtYN_model")
     if detect_text_presence(image_path):
-        print("文字が検出されました。txtY_modelで分類します...")
+        print("Character detected.Run txtY_model")
         classification = classify_with_text(image_path)
     else:
-        print("文字は検出されませんでした。txtN_modelで分類します...")
+        print("Character not detected.Run txtN_model")
         classification = classify_no_text(image_path)
 
     print(f"Class: {classification}")
